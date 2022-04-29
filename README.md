@@ -8,6 +8,6 @@ run npm init -y to create a package jason without the need to answer set of ques
 run npm install express to add it as a dependencies on package jason
 
 then I will open the app.js file and import the express library and since this is a function I will call it
-declare a PORT variable and assigne a port number '3000'
+declare a PORT variable and assign a port number '3000'
 create a .env file
 MKDIR controllers and create a controllers.js file
