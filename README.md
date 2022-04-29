@@ -14,17 +14,12 @@ run npm init -y to create a package jason without the need to answer set of ques
 
 run npm install express to add it as a dependencies on package jason
 
-<<<<<<< HEAD
-then I will open the app.js file and import the express library and since this is a function I will call it
-declare a PORT variable and assign a port number '3000'
-=======
 Open the app.js file and import (const express = require("express") the express library, since this is a function I will call it (const app = express())
 
 Export the app at the bottom of the file (module.exports = app;)
 
 Declare a PORT variable and assign a port number (3000)
 
->>>>>>> c0116dfdcb174be6bed7305d7272e95a502c633e
 create a .env file
 
 npm install dotenv
