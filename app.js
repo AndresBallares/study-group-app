@@ -1,5 +1,4 @@
 // the way we import a library on the server side.
-
 const express = require("express");
 //'express' is actually a function that returns an object with which we can manage a server.
 const app = express()
@@ -36,5 +35,5 @@ app.get('/group', (request, response) => {
 
 
 
-
+// export our app to server.js
 module.exports = app;
