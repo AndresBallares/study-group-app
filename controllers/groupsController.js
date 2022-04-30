@@ -14,7 +14,7 @@ groups.get('/', (_, response) => {
 });
 
 groups.get('/:index', (request, response) => {
-    const index = request.params;
+    const index = request.params.index;
     if(groupData[index]){
         response.json(groupData[index]);
     } else {
