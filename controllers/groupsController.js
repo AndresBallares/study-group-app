@@ -8,15 +8,15 @@ const groups = express.Router();
 
 // Routes
 
-groups.get('/', (request, response) => {
+groups.get('/', (_, response) => {
     console.log('get request to /group');
     response.json(groupData);
 });
 
 groups.get('/:index', (request, response) => {
-    const i = request.params.index;
-    if(groups[index]){
-        response.json(groupData[i]);
+    const index = request.params;
+    if(groupData[index]){
+        response.json(groupData[index]);
     } else {
         response.status(404).json({error: "Group not found"});
     }

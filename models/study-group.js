@@ -1,10 +1,16 @@
 const groups = [
     {
-        name: 'string',
-        main_focus: 'string',
-        formed: 'date',
-        contact: 'string',
-    }
+        name: 'Hudson Valley Hikers',
+        main_focus: 'outdoor activity',
+        formed: 'Oct 2013',
+        contact: 'George'
+    },
+    {
+        name: 'Long Island Soccer',
+        main_focus: 'Indoor Soccer',
+        formed: 'Oct 2022',
+        contact: 'Miki'    
+    },
 ]
 
 
