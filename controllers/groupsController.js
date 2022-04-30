@@ -2,9 +2,31 @@
 const express = require('express');
 // import files
 const groupData = require('../models/study-group');
-//'.Router' creates a new controller that handles a sub-route, in this case it will handle everything 
+//'express.Router' creates a new controller that handles a sub-route, in this case it will handle everything 
 //that starts with groups.
 const groups = express.Router();
+
+// Routes
+
+groups.get('/', (request, response) => {
+    console.log('get request to /group');
+    response.json(groupData);
+});
+
+groups.get('/:index', (request, response) => {
+    const i = request.params.index;
+    if(groups[index]){
+        response.json(groupData[i]);
+    } else {
+        response.status(404).json({error: "Group not found"});
+    }
+});
+
+groups.post('/', (request, response) => {
+    console.log('hit the post route ;)')
+    groups.push(request.body);
+    response.status(201).json(groupData);
+})
 
 
 

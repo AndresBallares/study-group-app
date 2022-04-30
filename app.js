@@ -1,11 +1,26 @@
+// files
+const groupsController = require('./controllers/groupsController');
+const eventsController = require('./controllers/eventsController');
+const usersController = require('./controllers/usersController');
 // the way we import a library on the server side.
 const express = require("express");
 //'express' is actually a function that returns an object with which we can manage a server.
+// create the express app.
 const app = express()
 //const PORT = 3000;
-const groups = require('./models/study-group')
-const events = require('./models/events');
-const users = require('./models/users');
+
+// adding JSON-parsing middleware.  For every request handle incoming information as JSON.
+app.use(express.json());
+
+// delegates everything that starts with endpoint /group to the groupsController
+// takes in two arguments a sub-route and the controller
+app.use('/groups', groupsController);
+app.use('/events', eventsController);
+app.use('/user', usersController);
+
+// const groups = require('./models/study-group')
+// const events = require('./models/events');
+// const users = require('./models/users');
 //console.log(users);
 
 
@@ -20,11 +35,12 @@ app.get('/', (request, response) => {
     response.send('Welcome to Group Events.')
 });
 
-app.get('/group', (request, response) => {
-    console.log('get request received to route /groups');
-    response.send(groups)
 
-})
+
+// Star (*) matches anything we haven't yet.
+app.get('*', (request, response) => {
+    response.status(404).json({ error: "Page not found"});
+});
 
 
 

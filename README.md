@@ -24,7 +24,7 @@ create a .env file
 
 npm install dotenv
 
-open .env file and create an enviormental variable (PORT = 3000), this will package the port into an object {PORT: 3000} when we do process.env on the server.js file.
+open .env file and create an environmental variable (PORT = 3000), this will package the port into an object {PORT: 3000} when we do process.env on the server.js file.
 
 Create a server.js file and import the app file (const app = require("./app")  The purpose of this file (server.js) is to do a separation of concerns.
 
@@ -36,4 +36,10 @@ Create the objects with it's corresponding key value pairs and (module.exports =
 
 On the app.js file import study-group.js, events.js and users.js
 
-MKDIR controllers and create a controllers.js file
+Create controller folder and eventsControllers.js, groupsController.js and usersController.js
+
+Exported express.Router to app.js in order to designate /[Router]
+
+
+
+
