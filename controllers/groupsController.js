@@ -5,12 +5,13 @@ const groupData = require('../models/study-group');
 //'express.Router' creates a new controller that handles a sub-route, in this case it will handle everything 
 //that starts with groups.
 const groups = express.Router();
+const { getAllGroups } = require('../queries/groups');
 
 // Routes
 
-groups.get('/', (_, response) => {
-    console.log('get request to /group');
-    response.json(groupData);
+groups.get('/', async (require, response) => {
+    const groups = await getAllGroups();
+    response.status(200).json(groups);
 });
 
 groups.get('/:index', (request, response) => {

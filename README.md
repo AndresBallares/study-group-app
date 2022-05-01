@@ -42,6 +42,16 @@ Exported express.Router to app.js in order to designate /[Router]
 
 Added middleware 'use.app(express.json())' in the app.js file to handle incoming request as JSON information. 
 
+Created db folder and added dbConfig.js, schema.sql and seed.sql file.
+
+npm install pg-promise to connect to database, this will allow us to write sql commands and return json.  Also install cors middleware.
+
+Added environmental variables to the .env file this will allow us to database to the API.
+
+Created queries folder and groups.js.  this will allow us to us javascript and sql to query the database.
+
+
+
 
 
 

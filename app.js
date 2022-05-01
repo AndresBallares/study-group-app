@@ -5,10 +5,11 @@ const usersController = require('./controllers/usersController');
 
 // the way we import a library on the server side.
 const express = require("express");
+const cors = require("cors");
 //'express' is actually a function that returns an object with which we can manage a server.
 // create the express app.
 const app = express()
-//const PORT = 3000;
+const PORT = process.env.PORT;
 
 // adding JSON-parsing middleware.  
 // For every request parse incoming information as JSON.
