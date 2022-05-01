@@ -24,9 +24,16 @@ groups.get('/:index', (request, response) => {
 
 groups.post('/', (request, response) => {
     console.log('hit the post route ;)')
-    groups.push(request.body);
+    groupData.push(request.body);
     response.status(201).json(groupData);
-})
+});
+
+groups.delete('/:id', (request, response) => {
+    const deletedGroup = groupData.splice(request.params.id, 1);
+    response.json(deletedGroup);
+});
+
+
 
 
 

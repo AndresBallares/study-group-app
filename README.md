@@ -40,6 +40,8 @@ Create controller folder and eventsControllers.js, groupsController.js and users
 
 Exported express.Router to app.js in order to designate /[Router]
 
+Added middleware 'use.app(express.json())' in the app.js file to handle incoming request as JSON information. 
+
 
 
 

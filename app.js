@@ -1,7 +1,8 @@
-// files
+// importing files
 const groupsController = require('./controllers/groupsController');
 const eventsController = require('./controllers/eventsController');
 const usersController = require('./controllers/usersController');
+
 // the way we import a library on the server side.
 const express = require("express");
 //'express' is actually a function that returns an object with which we can manage a server.
@@ -9,10 +10,12 @@ const express = require("express");
 const app = express()
 //const PORT = 3000;
 
-// adding JSON-parsing middleware.  For every request handle incoming information as JSON.
+// adding JSON-parsing middleware.  
+// For every request parse incoming information as JSON.
 app.use(express.json());
 
-// delegates everything that starts with endpoint /group to the groupsController
+// checks if the request includes endpoint /groups, if so.
+// delegates everything that starts with endpoint /groups to the groupsController
 // takes in two arguments a sub-route and the controller
 app.use('/groups', groupsController);
 app.use('/events', eventsController);
