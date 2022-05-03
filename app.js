@@ -5,7 +5,7 @@ const cors = require("cors");
 //'express' is actually a function that returns an object with which we can manage a server.
 // create the express app.
 const app = express()
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3003;
 
 // adding JSON-parsing middleware.  
 // For every request parse incoming information as JSON.

@@ -54,6 +54,8 @@ added functions on the queries file and updated groupsController.js file.
 
 Tested all routes on postman, they are functional.
 
+deployed to heroke === heroku	https://git.heroku.com/study-group-andres-app.git
+
 
 
 

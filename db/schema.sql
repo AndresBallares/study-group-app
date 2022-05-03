@@ -12,3 +12,13 @@ CREATE TABLE groups (
     contact_email TEXT
     );
 
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    virtual_meeting_link TEXT NOT NULL,
+    study_group_id FOREIGN KEY,
+    start_time INT,
+    end_time INT,
+    number_of_attendees INT,
+)
+
