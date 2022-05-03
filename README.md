@@ -48,7 +48,12 @@ npm install pg-promise to connect to database, this will allow us to write sql c
 
 Added environmental variables to the .env file this will allow us to database to the API.
 
-Created queries folder and groups.js.  this will allow us to us javascript and sql to query the database.
+Created queries folder and groups.js.  this will allow us to add javascript and sql commands to query the database.
+
+added functions on the queries file and updated groupsController.js file.
+
+Tested all routes on postman, they are functional.
+
 
 
 
