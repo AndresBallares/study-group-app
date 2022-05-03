@@ -1,39 +1,40 @@
 // import library or dependencies
 const express = require('express');
-// import files
-const groupData = require('../models/study-group');
 //'express.Router' creates a new controller that handles a sub-route, in this case it will handle everything 
 //that starts with groups.
-const groups = express.Router();
-const { getAllGroups } = require('../queries/groups');
 
 // Routes
+const groups = express.Router();
+const { getAllGroups, getGroup, createGroup, deleteGroup, updateGroup } = require('../queries/groups');
+
 
 groups.get('/', async (require, response) => {
-    const groups = await getAllGroups();
-    response.status(200).json(groups);
+    const group = await getAllGroups();
+    console.log(group)
+    response.status(200).json(group);
 });
 
-groups.get('/:index', (request, response) => {
-    const index = request.params.index;
-    if(groupData[index]){
-        response.json(groupData[index]);
-    } else {
-        response.status(404).json({error: "Group not found"});
-    }
+groups.get('/:id', async (request, response) => {
+    const group = await getGroup(request.params.id);
+    response.status(200).json(group);
 });
 
-groups.post('/', (request, response) => {
-    console.log('hit the post route ;)')
-    groupData.push(request.body);
-    response.status(201).json(groupData);
+groups.post('/', async (request, response) => {
+    const group = await createGroup(request.body);
+    response.status(200).json(group);
 });
 
-groups.delete('/:id', (request, response) => {
-    const deletedGroup = groupData.splice(request.params.id, 1);
-    response.json(deletedGroup);
+groups.delete('/:id', async (request, response) => {
+    const { id } = request.params;
+    const deletedGroup = await deleteGroup(id);
+    response.status(200).json(deletedGroup);
 });
 
+groups.put("/:id", async (request, response) => {
+    const { id } = request.params;
+    const updatedGroup = await updateGroup(id, request.body);
+    response.status(200).json(updatedGroup);
+});
 
 
 

@@ -10,4 +10,4 @@ const connect = {
 
 const db = pgp(connect);
 
-module.export = db;
+module.exports = db;
